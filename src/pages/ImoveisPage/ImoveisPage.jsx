@@ -27,7 +27,7 @@ function ImoveisPage() {
                 className="listaImoveis_imovelCard">
                     <ImovelCard imovel={item} />
                 </div>
-            )};
+            )}
         </div>
      );
 }

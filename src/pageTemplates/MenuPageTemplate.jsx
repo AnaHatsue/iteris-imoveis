@@ -14,8 +14,9 @@ import ListItemIcon from "@material-ui/core/ListItemIcon";
 import ListItemText from "@material-ui/core/ListItemText";
 import HomeIcon from "@material-ui/icons/Home";
 import FlagIcon from "@material-ui/icons/Flag";
+import StoreIcon from "@material-ui/icons/Store";
+import CreateIcon from "@material-ui/icons/Create";
 import { NavLink } from "react-router-dom";
-import LocationCityIcon from '@material-ui/icons/LocationCity';
 
 const useStyles = makeStyles((theme) => ({
   list: {
@@ -74,23 +75,28 @@ export default function MenuPageTemplate(props) {
               </ListItemIcon>
               <ListItemText primary="Home" />
             </ListItem>
+            <ListItem component={NavLink} to="/imoveis/cadastro">
+              <ListItemIcon>
+                <CreateIcon />
+              </ListItemIcon>
+              <ListItemText primary="Cadastrar Novo" />
+            </ListItem>
+            <ListItem component={NavLink} to="/imoveis">
+              <ListItemIcon>
+                <StoreIcon />
+              </ListItemIcon>
+              <ListItemText primary="Imóveis" />
+            </ListItem>
             <ListItem component={NavLink} to="/sobre">
               <ListItemIcon>
                 <FlagIcon />
               </ListItemIcon>
               <ListItemText primary="Sobre" />
             </ListItem>
-            <ListItem component={NavLink} to="/imoveis">
-              <ListItemIcon>
-                <LocationCityIcon />
-              </ListItemIcon>
-              <ListItemText primary="Imoveis" />
-            </ListItem>
           </List>
         </div>
       </Drawer>
       <main className={classes.main}>
-      {/* props.children é a forma de acessar o "conteúdo" usado no componente, assim podemos usar elementos externos aqui. */}
         <div className="ConteudoPrincipalAQUI">{props.children}</div>
       </main>
     </div>

@@ -27,7 +27,7 @@ export function postImovel(novo) {
         type:"Venda",
     };
 
-    return axios.get(urlApi, imovelPostMovel).then((AxiosResponse) => {
+    return axios.post(urlApi, imovelPostMovel).then((AxiosResponse) => {
         return AxiosResponse.data;
     })
 }
